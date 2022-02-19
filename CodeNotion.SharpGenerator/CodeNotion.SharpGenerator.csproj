@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Vit.Backoffice.Tests.SourceGeneration</RootNamespace>
+        <LangVersion>10</LangVersion>
+    </PropertyGroup>
+
+</Project>

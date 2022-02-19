@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeNotion.SharpGenerator", "CodeNotion.SharpGenerator\CodeNotion.SharpGenerator.csproj", "{A97246E0-8802-401F-8632-E90FECB0E7E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeNotion.SharpGenerator.EfCore", "CodeNotion.SharpGenerator.EfCore\CodeNotion.SharpGenerator.EfCore.csproj", "{B0C8D81C-F2F2-41AA-B803-DAA3FC8010C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeNotion.SharpGenerator.Sample", "Samples\CodeNotion.SharpGenerator.Sample\CodeNotion.SharpGenerator.Sample.csproj", "{119B70FE-8FA6-49F5-BF19-572D156849EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A97246E0-8802-401F-8632-E90FECB0E7E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A97246E0-8802-401F-8632-E90FECB0E7E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A97246E0-8802-401F-8632-E90FECB0E7E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A97246E0-8802-401F-8632-E90FECB0E7E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0C8D81C-F2F2-41AA-B803-DAA3FC8010C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0C8D81C-F2F2-41AA-B803-DAA3FC8010C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0C8D81C-F2F2-41AA-B803-DAA3FC8010C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0C8D81C-F2F2-41AA-B803-DAA3FC8010C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{119B70FE-8FA6-49F5-BF19-572D156849EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{119B70FE-8FA6-49F5-BF19-572D156849EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{119B70FE-8FA6-49F5-BF19-572D156849EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{119B70FE-8FA6-49F5-BF19-572D156849EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
