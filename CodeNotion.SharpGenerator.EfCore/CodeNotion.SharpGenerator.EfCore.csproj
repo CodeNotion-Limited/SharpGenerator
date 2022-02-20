@@ -4,6 +4,13 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <Title>CodeNotion.SharpGenerator.EfCore</Title>
+        <Authors>CodeNotion Limited</Authors>
+        <Description>Utility tools to generate C# classes from a datasource using Entityframework Core lazy loading proxies</Description>
+        <PackageProjectUrl>https://github.com/CodeNotion-Limited/SharpGenerator</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/CodeNotion-Limited/SharpGenerator</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/CodeNotion-Limited/SharpGenerator</RepositoryUrl>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
 
     <ItemGroup>

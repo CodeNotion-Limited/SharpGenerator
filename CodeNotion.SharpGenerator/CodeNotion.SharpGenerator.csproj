@@ -5,6 +5,13 @@
         <Nullable>enable</Nullable>
         <RootNamespace>Vit.Backoffice.Tests.SourceGeneration</RootNamespace>
         <LangVersion>10</LangVersion>
+        <Title>CodeNotion.SharpGenerator</Title>
+        <Authors>CodeNotion Limited</Authors>
+        <Description>A simple class generator to transform runtime objects to C# code. Used mainly for automating unit testing database seeding.</Description>
+        <PackageProjectUrl>https://github.com/CodeNotion-Limited/SharpGenerator</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/CodeNotion-Limited/SharpGenerator</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/CodeNotion-Limited/SharpGenerator</RepositoryUrl>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
 
 </Project>
