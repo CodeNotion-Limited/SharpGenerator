@@ -24,7 +24,7 @@ internal class CollectionGenerator
             sb.AppendLine($",");
         }
 
-        sb.Append(@"\t\t};");
+        sb.Append("\t\t};");
 
         return sb;
     }

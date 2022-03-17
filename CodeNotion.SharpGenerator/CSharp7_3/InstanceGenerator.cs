@@ -12,7 +12,7 @@ internal class InstanceGenerator
 
     internal StringBuilder Generate(StringBuilder sb, object instance)
     {
-        sb.Append("{");
+        sb.Append("{ ");
         foreach (var propertyInfo in instance.GetType().GetProperties().Where(x => x.PropertyType.IsSimple()))
         {
             var value = propertyInfo.GetValue(instance);

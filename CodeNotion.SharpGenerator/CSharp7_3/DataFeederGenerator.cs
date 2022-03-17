@@ -14,7 +14,7 @@ public class DataFeederGenerator
         _interfaces = interfaces ?? Array.Empty<string>();
     }
 
-    public StringBuilder Generate(string classNamespace, string className, IEnumerable<object> instances)
+    public StringBuilder Generate(string classNamespace, string className, IEnumerable<object> instances, string[] usings)
     {
         var instanceGenerator = new InstanceGenerator();
         var collectionGenerator = new CollectionGenerator(instanceGenerator);
@@ -27,7 +27,11 @@ public class DataFeederGenerator
             })
             .ToArray();
 
-        var typeNamespaces = typeGroups.Select(x => x.Key.Namespace).Distinct().ToArray();
+        var typeNamespaces = typeGroups
+            .Select(x => x.Key.Namespace)
+            .Concat(usings)
+            .Distinct()
+            .ToArray();
 
         var sb = new StringBuilder(@"// ReSharper disable RedundantUsingDirective
 // ReSharper disable ArrangeTrailingCommaInSinglelineLists
@@ -42,7 +46,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Microsoft.EntityFrameworkCore;
 
 ##NAMESPACES##
 

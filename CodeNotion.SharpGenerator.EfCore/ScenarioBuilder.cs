@@ -8,6 +8,7 @@ public class ScenarioBuilder
     private readonly Func<DbContext> _contextFactory;
     private string[]? Interfaces { get; set; }
     private LanguageVersion Version { get; set; } = LanguageVersion.CSharp10;
+    private string[] Usings { get; set; } = Array.Empty<string>();
 
     public ScenarioBuilder(string basePath, Func<DbContext> contextFactory)
     {
@@ -24,6 +25,12 @@ public class ScenarioBuilder
     public ScenarioBuilder SetLanguageVersion(LanguageVersion version)
     {
         Version = version;
+        return this;
+    }
+
+    public ScenarioBuilder Using(params string[] usings)
+    {
+        Usings = usings;
         return this;
     }
 
@@ -56,8 +63,8 @@ public class ScenarioBuilder
 
         var generatedDataSourceFile = Version switch
         {
-            LanguageVersion.CSharp7_3 => new CSharp7_3.DataFeederGenerator(Interfaces).Generate(path.Replace('/', '.'), name, entries),
-            LanguageVersion.CSharp10 => new CSharp10.DataFeederGenerator(Interfaces).Generate(path.Replace('/', '.'), name, entries),
+            LanguageVersion.CSharp7_3 => new CSharp7_3.DataFeederGenerator(Interfaces).Generate(path.Replace('/', '.'), name, entries, Usings),
+            LanguageVersion.CSharp10 => new CSharp10.DataFeederGenerator(Interfaces).Generate(path.Replace('/', '.'), name, entries, Usings),
             _ => throw new NotSupportedException($"Version {Version.ToString()} is not supported")
         };
 
