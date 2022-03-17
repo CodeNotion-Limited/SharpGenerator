@@ -1,10 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <VersionPrefix>1.0.1</VersionPrefix>
+        <VersionPrefix>1.0.2</VersionPrefix>
         <TargetFramework>netstandard2.0</TargetFramework>
         <Nullable>enable</Nullable>
-        <RootNamespace>Vit.Backoffice.Tests.SourceGeneration</RootNamespace>
         <LangVersion>10</LangVersion>
         <Title>CodeNotion.SharpGenerator</Title>
         <Authors>CodeNotion Limited</Authors>

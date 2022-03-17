@@ -1,47 +1,37 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 
-namespace CodeNotion.SharpGenerator.EfCore
+namespace CodeNotion.SharpGenerator.EfCore;
+
+internal class ObjectLoader
 {
-    public class ObjectLoader
+    internal static void Load(IEnumerable instances)
     {
-        public readonly HashSet<object> VisitedObject = new();
-
-        public void Load(IEnumerable instances)
+        foreach (var instance in instances)
         {
-            foreach (var instance in instances)
-            {
-                Load(instance);
-            }
+            Load(instance);
         }
+    }
 
-        public void Load(object instance)
+    private static void Load(object instance)
+    {
+        var instanceType = instance.GetType();
+        var properties = instanceType.GetProperties();
+        foreach (var property in properties)
         {
-            var instanceType = instance.GetType();
-            var properties = instanceType.GetProperties();
-            foreach (var property in properties)
+            if ((typeof(IEnumerable).IsAssignableFrom(property.PropertyType)))
             {
-                if ((typeof(IEnumerable).IsAssignableFrom(property.PropertyType)))
-                {
-                    continue;
-                }
+                continue;
+            }
 
-                var value = property.GetValue(instance);
-                if (value is null)
-                {
-                    continue;
-                }
+            var value = property.GetValue(instance);
+            if (value is null)
+            {
+                continue;
+            }
 
-                if (VisitedObject.Any(x => x == value))
-                {
-                    continue;
-                }
-
-                if (property.PropertyType.IsClass)
-                {
-                    Load(value);
-                }
+            if (property.PropertyType.IsClass)
+            {
+                Load(value);
             }
         }
     }
