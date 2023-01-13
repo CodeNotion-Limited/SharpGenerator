@@ -48,6 +48,7 @@ internal class InstanceGenerator
             float => $"{value.ToString().Replace(',', '.')}f"!,
             decimal => $"{value.ToString().Replace(',', '.')}m"!,
             DateTime time => $"DateTime.Parse(\"{time:yyyy-MM-dd HH:mm:ss.fff}\")",
+            TimeSpan span => $"TimeSpan.Parse(\"{span}\")",
             Guid => $"new Guid(\"{value}\")",
             Enum => $"{type.Name}.{value}",
             _ => throw new Exception($"Unsupported type {value.GetType()}")
